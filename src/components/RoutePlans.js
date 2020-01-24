@@ -11,15 +11,16 @@ const efiLat = 60.1694431;
 const efiLon = 24.9260771;
 
 
-const RoutePlans = ({address}) =>{
+const RoutePlans = ({address, toggleFrom}) =>{
 
 
   const { loading, error, data } = useQuery(findTrip, {
     variables: {
-      fromLat: efiLat,
-      fromLon: efiLon,
-      toLat: address.lat,
-      toLon: address.lon
+      fromLat: toggleFrom ? address.lat :efiLat,
+      fromLon: toggleFrom ? address.lon :efiLon,
+      toLat: toggleFrom ? efiLat : address.lat,
+      toLon: toggleFrom ? efiLon : address.lon,
+
     }
   });
 

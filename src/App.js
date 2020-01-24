@@ -28,6 +28,7 @@ function App() {
   const address = useField('text');
   const [currentAddress, setCurrentAddress] = useState(null);
   const [addresses, setAddresses] = useState([]);
+  const [toggleFrom, setToggleFrom] = useState(false);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -51,7 +52,14 @@ function App() {
           <input name='address' {...address}></input>
           <button type='submit'> submit</button>
         </form>
-        {currentAddress ? <RoutePlans address={currentAddress} /> : <ul>{rows()}</ul>}
+        <button onClick={() => setToggleFrom(!toggleFrom)}>
+          toggle {toggleFrom ? 'from' : 'to'} Eficode
+        </button>
+        {currentAddress ? (
+          <RoutePlans address={currentAddress} toggleFrom={toggleFrom}/>
+        ) : (
+          <ul>{rows()}</ul>
+        )}
       </div>
     </ApolloProvider>
   );
