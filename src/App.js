@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import ApolloClient, { gql } from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import findTrip from './utils/Queries';
 import Address from './components/Address';
 import RoutePlans from './components/RoutePlans';
 
 const client = new ApolloClient({
   uri: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql'
 });
-const efiLat = 60.1694431;
-const efiLon = 24.9260771;
 
 const openGeocoder = require('node-open-geocoder');
 

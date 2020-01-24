@@ -2,7 +2,7 @@ import React from 'react'
 
 const secsToDate = (time) =>{
     let curDate = new Date(null)
-    curDate.setTime(time*1000)
+    curDate.setTime(time)
     return curDate.toString()
 }
 
