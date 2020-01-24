@@ -14,6 +14,8 @@ const findTrip = gql`
       itineraries {
         walkDistance
         duration
+        startTime
+        endTime
         legs {
           mode
           startTime

@@ -1,19 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const secsToDate = (time) =>{
     let curDate = new Date(null)
-    curDate.setTime(time*1000)
-    return curDate
+    curDate.setTime(time)
+    return curDate.toString()
 }
 
-/*
+const Legs = ({data, onClick}) =>{
+
+    return(
+        <li key={data.startTime+data.endTime} onClick={onClick}>
             <p> {secsToDate(data.startTime)}</p>
             <p> {secsToDate(data.endTime)}</p>
-            */
-const Legs = ({data}) =>{
-    console.log("data: ",data)
-    return(
-        <li key={data.startTime}>
             <p> {data.mode}</p>
             <p> {data.from.name}</p>
             <p> {data.to.name}</p>
