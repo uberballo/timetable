@@ -1,19 +1,16 @@
-import React from 'react'
-import secsToDate from '../helpers/date'
+import React from 'react';
+import secsToDate from '../helpers/date';
 
+const Legs = ({ plan }) => {
+  return (
+    <li className={'legs-li'}>
+      <p>Departure: {secsToDate(plan.startTime)}</p>
+      <p>Arrival: {secsToDate(plan.endTime)}</p>
+      <p> {plan.mode}</p>
+      <p> From {plan.from.name}</p>
+      <p> To {plan.to.name}</p>
+    </li>
+  );
+};
 
-const Legs = ({data, onClick}) =>{
-
-    return(
-        <li className={"legs-li"} key={data.startTime+data.endTime} onClick={onClick}>
-            <p> {secsToDate(data.startTime)}</p>
-            <p> {secsToDate(data.endTime)}</p>
-            <p> {data.mode}</p>
-            <p> From {data.from.name}</p>
-            <p> To {data.to.name}</p>
-        </li>
-    )
-
-}
-
-export default Legs
+export default Legs;

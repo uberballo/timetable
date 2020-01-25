@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Legs from './Legs';
-import SimpleLegs from './SimpleLegs';
+import secsToDate from '../helpers/date';
 
 const SinglePlan = ({ data }) => {
-  const [expand, setExpand] = useState(false);
-  console.log(data)
-  const handleClick = () => {
-    setExpand(!expand);
-  };
-  const rows = () => data.legs.map(e => <Legs  data={e} onClick={handleClick} key={e.to.name} />);
+
+  const rows = () =>
+    data.legs.map(e => (
+      <Legs plan={e} data={data} key={e.endTime + e.startTime} />
+    ));
   return (
-    <li className="uk-align-center uk-text-center" >
-      {expand ? (
-        <ul className='uk-list uk-list-divider'>{rows()}</ul>
-      ) : (
-        <SimpleLegs data={data} onClick={handleClick} />
-      )}
-    </li >
+    <li className='uk-text-center' key={data.endTime}>
+      <ul className='uk-list uk-align-center'>
+        <div className='uk-grid uk-flex-center'>
+          <div className='uk-width-1-1'>
+            <p>Start: {secsToDate(data.startTime)}</p>
+            <p>End: {secsToDate(data.endTime)}</p>
+            <hr className='uk-divider-icon' />
+          </div>
+          <div className='uk-flex uk-flex-center'>
+            <ul className='uk-subnav'>{rows()}</ul>
+          </div>
+        </div>
+      </ul>
+    </li>
   );
 };
 

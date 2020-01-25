@@ -3,7 +3,7 @@ import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import RoutePlans from './components/RoutePlans';
-import AddressView from './components/AddressView'
+import AddressView from './components/AddressView';
 
 const client = new ApolloClient({
   uri: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql'
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className="uk-container uk-container-expand uk-aling-center ">
+      <div className='uk-container uk-container-expand uk-aling-center uk-background-default '>
         {currentAddress ? (
           <RoutePlans address={currentAddress} toggleFrom={toggleFrom} />
         ) : (

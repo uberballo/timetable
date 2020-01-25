@@ -29,15 +29,16 @@ const AddressView = ({ toggleFrom, setToggleFrom, setCurrentAddress }) => {
     ));
 
   return (
-    <div className="uk-position-top-center uk-align-center uk-padding">
+    <div className='uk-position-top-center uk-align-center uk-padding'>
       <AddressForm
         toggleFrom={toggleFrom}
         address={address}
         setAddresses={setAddresses}
         setToggleFrom={setToggleFrom}
       />
-      {addresses ? 
-        <ul className = "uk-list uk-list-striped uk-align-bottom">{rows()}</ul> : null}
+      {addresses ? (
+        <ul className='uk-list uk-list-striped uk-align-bottom'>{rows()}</ul>
+      ) : null}
     </div>
   );
 };

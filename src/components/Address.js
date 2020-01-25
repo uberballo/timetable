@@ -3,7 +3,6 @@ import React from 'react';
 const Address = ({ result, setCurrentAddress }) => {
   const onClick = () => {
     setCurrentAddress(result);
-    console.log(result);
   };
 
   const address = result.address;

@@ -19,17 +19,22 @@ const RoutePlans = ({ address, toggleFrom }) => {
     pollInterval: 30000
   });
 
-  if (loading) return 'loading..';
+  if (loading) return <p className='uk-text-center '>loading..</p>;
   if (error) {
     console.log(error);
     return 'error';
   }
+
   return (
-    <div className='uk-container uk-container-center uk-align-center'>
+    <div className='uk-container uk-container-center uk-align-center '>
       <Header address={address} toggleFrom={toggleFrom} />
-      <ul className='uk-list uk-list-striped'>
+      <ul className='uk-list uk-list-striped uk-align-center'>
         {data.plan.itineraries.map(e => (
-          <SinglePlan data={e} key={e.startTime} />
+          <SinglePlan
+            data={e}
+            address={address}
+            key={e.endTime + e.walkDistance}
+          />
         ))}
       </ul>
     </div>
