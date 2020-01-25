@@ -23,7 +23,7 @@ const Header = ({address, toggleFrom}) =>{
     const secondAddress = `To ${toggleFrom ? eficodeAddress : currentAddress}`
 
     return(
-        <div>
+        <div className="uk-text-center">
             <p>{currentTime}</p>
             <p>{firstAddress} </p>
             <p> {secondAddress} </p>

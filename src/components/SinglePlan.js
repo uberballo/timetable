@@ -10,13 +10,13 @@ const SinglePlan = ({ data }) => {
   };
   const rows = () => data.legs.map(e => <Legs  data={e} onClick={handleClick} key={e.to.name} />);
   return (
-    <div className="single-plan" >
+    <li className="uk-align-center uk-text-center" >
       {expand ? (
-        <ul className='single-plan-ul'>{rows()}</ul>
+        <ul className='uk-list uk-list-divider'>{rows()}</ul>
       ) : (
         <SimpleLegs data={data} onClick={handleClick} />
       )}
-    </div>
+    </li >
   );
 };
 

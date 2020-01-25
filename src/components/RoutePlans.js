@@ -25,11 +25,13 @@ const RoutePlans = ({ address, toggleFrom }) => {
     return 'error';
   }
   return (
-    <div>
+    <div className='uk-container uk-container-center uk-align-center'>
       <Header address={address} toggleFrom={toggleFrom} />
-      {data.plan.itineraries.map(e => (
-        <SinglePlan data={e} key={e.startTime}/>
-      ))}
+      <ul className='uk-list uk-list-striped'>
+        {data.plan.itineraries.map(e => (
+          <SinglePlan data={e} key={e.startTime} />
+        ))}
+      </ul>
     </div>
   );
 };

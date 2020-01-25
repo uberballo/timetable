@@ -37,7 +37,7 @@ const AddressView = ({ toggleFrom, setToggleFrom, setCurrentAddress }) => {
         setToggleFrom={setToggleFrom}
       />
       {addresses ? 
-        <ul className = "uk-list uk-align-bottom">{rows()}</ul> : null}
+        <ul className = "uk-list uk-list-striped uk-align-bottom">{rows()}</ul> : null}
     </div>
   );
 };
