@@ -21,21 +21,24 @@ const AddressView = ({ toggleFrom, setToggleFrom, setCurrentAddress }) => {
 
   const rows = () =>
     addresses.map(e => (
-      <Address key={e.osm_id}result={e} setCurrentAddress={setCurrentAddress} />
+      <Address
+        key={e.osm_id}
+        result={e}
+        setCurrentAddress={setCurrentAddress}
+      />
     ));
 
-  if (addresses) {
-    return rows();
-  } else {
-    return (
+  return (
+    <div>
       <AddressForm
         toggleFrom={toggleFrom}
         address={address}
         setAddresses={setAddresses}
         setToggleFrom={setToggleFrom}
       />
-    );
-  }
+      {addresses ? rows() : null}
+    </div>
+  );
 };
 
 export default AddressView;

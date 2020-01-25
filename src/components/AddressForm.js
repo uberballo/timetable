@@ -8,7 +8,10 @@ const AddressForm = ({address, setAddresses, setToggleFrom, toggleFrom}) => {
     openGeocoder()
       .geocode(address.value)
       .end((err, res) => {
-        setAddresses(res);
+        const result = res.filter(e =>{
+            return e.address.city === "Helsinki"
+        })
+        setAddresses(result);
       });
   };
 

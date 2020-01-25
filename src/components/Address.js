@@ -14,8 +14,7 @@ const Address = ({ result, setCurrentAddress }) => {
         {result.lat} {result.lon}
       </p>
       <p>
-        {address.road} {address.house_number}, {address.city},{' '}
-        {address.postcode}
+        {address.road} {address.house_number}, {address.city}, {address.postcode}
       </p>
       {address.address29 ? <p>{address.address29}</p> : null}
       <button onClick={onClick}>Select</button>
