@@ -29,7 +29,7 @@ const AddressView = ({ toggleFrom, setToggleFrom, setCurrentAddress }) => {
     ));
 
   return (
-    <div className='uk-position-top-center uk-align-center uk-padding'>
+    <div className='uk-position-top-center uk-align-center uk-padding uk-background-default'>
       <AddressForm
         toggleFrom={toggleFrom}
         address={address}

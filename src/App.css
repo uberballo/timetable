@@ -3,5 +3,14 @@
 }
 
 
+.uk-list-striped>li:nth-of-type(odd){
+  background: #d0c9c9b0;
+}
 
+.uk-list-striped>li:nth-of-type(even){
+  background: #ffffff;
+}
 
+.uk-background-default{
+  background-color:#ffffff
+}
