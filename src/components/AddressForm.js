@@ -23,6 +23,7 @@ const AddressForm = ({ address, setAddresses, setToggleFrom, toggleFrom }) => {
         <input
           className='uk-textarea uk-width-1-1@s'
           name='address'
+          placeholder="Type your adress here. E.g. Hämeentie 13 Helsinki"
           {...address}
         ></input>
         <button
