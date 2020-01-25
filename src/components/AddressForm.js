@@ -1,5 +1,6 @@
 import React from 'react';
 
+// eslint-disable-next-line no-undef
 const openGeocoder = require('node-open-geocoder');
 
 const AddressForm = ({ address, setAddresses, setToggleFrom, toggleFrom }) => {
