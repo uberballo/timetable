@@ -1,20 +1,16 @@
 import React from 'react'
+import secsToDate from '../helpers/date'
 
-const secsToDate = (time) =>{
-    let curDate = new Date(null)
-    curDate.setTime(time)
-    return curDate.toString()
-}
 
 const Legs = ({data, onClick}) =>{
 
     return(
-        <li key={data.startTime+data.endTime} onClick={onClick}>
+        <li className={"legs-li"} key={data.startTime+data.endTime} onClick={onClick}>
             <p> {secsToDate(data.startTime)}</p>
             <p> {secsToDate(data.endTime)}</p>
             <p> {data.mode}</p>
-            <p> {data.from.name}</p>
-            <p> {data.to.name}</p>
+            <p> From {data.from.name}</p>
+            <p> To {data.to.name}</p>
         </li>
     )
 

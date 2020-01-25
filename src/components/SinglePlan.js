@@ -4,13 +4,13 @@ import SimpleLegs from './SimpleLegs';
 
 const SinglePlan = ({ data }) => {
   const [expand, setExpand] = useState(false);
-
+  console.log(data)
   const handleClick = () => {
     setExpand(!expand);
   };
-  const rows = () => data.legs.map(e => <Legs data={e} onClick={handleClick} />);
+  const rows = () => data.legs.map(e => <Legs  data={e} onClick={handleClick} key={e.to.name} />);
   return (
-    <div>
+    <div className="single-plan" >
       {expand ? (
         <ul className='single-plan-ul'>{rows()}</ul>
       ) : (
