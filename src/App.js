@@ -15,7 +15,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className='App'>
+      <div className="uk-container uk-container-expand uk-aling-center ">
         {currentAddress ? (
           <RoutePlans address={currentAddress} toggleFrom={toggleFrom} />
         ) : (

@@ -16,15 +16,16 @@ const AddressForm = ({address, setAddresses, setToggleFrom, toggleFrom}) => {
   };
 
   return (
-    <div className='address-form'>
+    <div className='uk-grid-small'>
       <form onSubmit={e => handleSubmit(e)}>
         address:
-        <input name='address' {...address}></input>
-        <button type='submit'> submit</button>
-      </form>
-      <button onClick={() => setToggleFrom(!toggleFrom)}>
+        <input className="uk-textarea uk-width-1-1@s" name='address' {...address}></input>
+        <button className="uk-button uk-button-default uk-width-1-2@s" type='submit'> submit</button>
+      <button className="uk-button uk-button-default uk-width-1-2@s"
+       onClick={() => setToggleFrom(!toggleFrom)}>
         toggle {toggleFrom ? 'from' : 'to'} Eficode
       </button>
+      </form>
     </div>
   );
 };
