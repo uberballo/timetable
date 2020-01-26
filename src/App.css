@@ -10,7 +10,9 @@
 .uk-list-striped>li:nth-of-type(even){
   background: #ffffff;
 }
-
+.uk-subnav>*>:first-child{
+  color:black;
+}
 .uk-background-default{
   background-color:#ffffff
 }

@@ -31,7 +31,7 @@ const AddressForm = ({ address, setAddresses, setToggleFrom, toggleFrom }) => {
           type='submit'
         >
           {' '}
-          submit
+          search
         </button>
         <button
           className='uk-button uk-button-default uk-width-1-2@s'

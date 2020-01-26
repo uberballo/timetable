@@ -22,20 +22,19 @@ const RoutePlans = ({ address, toggleFrom }) => {
   if (loading) return <p className='uk-text-center '>loading..</p>;
   if (error) {
     console.log(error);
-    return 'error';
+    return `error, ${error}`;
   }
+
+  const rows = () =>
+    data.plan.itineraries.map(e => (
+      <SinglePlan data={e} address={address} key={e.endTime + e.walkDistance} />
+    ));
 
   return (
     <div className='uk-container uk-container-center uk-align-center '>
       <Header address={address} toggleFrom={toggleFrom} />
       <ul className='uk-list uk-list-striped uk-align-center'>
-        {data.plan.itineraries.map(e => (
-          <SinglePlan
-            data={e}
-            address={address}
-            key={e.endTime + e.walkDistance}
-          />
-        ))}
+       {rows()}
       </ul>
     </div>
   );
